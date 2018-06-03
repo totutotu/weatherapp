@@ -1,0 +1,14 @@
+version: '3'
+services:
+  weatherapp_backend:
+    image: weatherapp_backend
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/usr/src/app
+  weatherapp_frontend:
+    image:  weatherapp_frontend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./frontend/:/usr/src/app
