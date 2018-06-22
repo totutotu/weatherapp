@@ -98,11 +98,13 @@ class Weather extends React.Component {
             error: '',
           });
         } else {
-          this.setState({ error: 'Unbable to fetch weather' });
+          this.setState({ error: 'Unable to get location-based weather' });
         }
       } else {
-        this.setState({ error: 'Unbable to use geolocation' });
+        this.setState({ error: 'Unable to get coordinates' });
       }
+    }, (err) => {
+      this.setState({ error: `Unable to get location, error:  ${err.message}` });
     });
   }
 
